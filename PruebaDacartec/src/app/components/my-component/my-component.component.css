@@ -1,0 +1,257 @@
+/* SECCIÓN BANNERS */
+.carousel-banner{
+    padding: 30px;
+    margin: 30px 0;
+    border: 1px solid #000;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 12px;
+}
+
+.carousel-banner-img{
+    margin: 0 auto;
+}
+
+.carousel-banner-text{
+    text-align: center;
+}
+
+::ng-deep .slick-prev:before, ::ng-deep .slick-next:before{
+    color: #ccc;
+}
+
+.carousel-banner-container{
+    cursor: grab;
+}
+
+/* SECCIÓN PRODUCTOS */
+.products-container{
+    display: flex;
+    padding: 40px;
+    border: 1px solid;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0px 0px 12px;
+}
+
+.products-item{
+    width: 33%;
+    border: 1px solid;
+    border-radius: 10px;
+    background: #fff;
+    padding: 0 10px;
+    box-shadow: 0px 0px 12px;
+    position: relative;
+}
+
+.products-img{
+    width: 100%;
+    height: auto;
+}
+
+.products-container div:first-child{
+    margin-right: 10px;
+    margin-left: 0;
+}
+
+.products-container div:last-child{
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+.products-container div{
+    margin: 0 10px;
+}
+
+.section-products{
+    margin: 0 0 30px 0;
+}
+
+.products-details-button{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
+    margin: 0 0 25px;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+}
+
+.products-container div.products-item-sub{
+    margin: 0;
+    overflow: auto;
+}
+
+.products-text{
+    text-align: center;
+    margin-bottom: 100px;
+    word-break: break-all;
+}
+
+/* SECCIÓN CLAIMS */
+.claims-container{
+    display: flex;
+    padding: 40px;
+    border: 1px solid;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0px 0px 12px;
+}
+
+.claims-item{
+    width: 33%;
+    border: 1px solid;
+    border-radius: 10px;
+    background: #fff;
+    padding: 0 10px;
+    box-shadow: 0px 0px 12px;
+    position: relative;
+}
+
+.claims-img{
+    width: 100%;
+    height: auto;
+}
+
+.claims-container div:first-child{
+    margin-right: 10px;
+    margin-left: 0;
+}
+
+.claims-container div:last-child{
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+.claim-container div{
+    margin: 0 10px;
+}
+
+.section-claims{
+    margin: 0 0 30px 0;
+}
+
+.claims-details-button{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
+    margin: 0 0 25px;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+}
+
+.claims-container div.claims-item-sub{
+    margin: 0;
+    overflow: auto;
+}
+
+.claims-text{
+    text-align: center;
+    word-break: break-all;
+}
+
+
+/* ESTILOS MOVIL BANNERS*/
+
+@media only screen and (max-width: 768px) {
+    .carousel-banner-img{
+        width: 100%;
+        height: auto;
+    }
+
+    .carousel-banner-text{
+        text-align: center;
+        margin: 0 auto;
+        width: 80%;
+    }
+}
+
+/* ESTILOS MOVIL PRODUCTS*/
+
+@media only screen and (max-width: 950px) {
+    .products-container{
+        flex-direction: column;
+        padding: 5%;
+    }
+
+    .products-container div, .products-container div:last-child, .products-container div:first-child{
+        margin: 0 0 30px 0;
+    }
+
+    .products-item{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0px 5%;
+    }
+
+    .products-figure{
+        text-align: center;
+        margin: 0;
+    }
+
+    .products-img{
+        max-width: 385px;
+    }
+    
+    .products-text{
+        text-align: center;
+        margin: 0 auto 100px auto;
+    }
+
+    .products-container div.products-item-sub{
+        margin: 0 auto;
+    }
+
+    .products-details-button{
+        right: 5%;
+    }
+}
+
+
+/* ESTILOS MOVIL CLAIMS*/
+
+@media only screen and (max-width: 950px) {
+    .claims-container{
+        flex-direction: column;
+        padding: 5%;
+    }
+
+    .claims-container div, .claims-container div:last-child, .claims-container div:first-child{
+        margin: 0 0 30px 0;
+    }
+
+    .claims-item{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0px 5%;
+    }
+
+    .claims-figure{
+        text-align: center;
+        margin: 0;
+    }
+
+    .claims-img{
+        max-width: 385px;
+    }
+    
+    .claims-text{
+        text-align: center;
+        margin: 25px auto 25px auto;
+    }
+
+    .claims-container div.claims-item-sub{
+        margin: 0 auto;
+    }
+
+    .claims-details-button{
+        right: 5%;
+    }
+}

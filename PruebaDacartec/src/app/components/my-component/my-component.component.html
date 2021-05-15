@@ -1,0 +1,38 @@
+<section class="carousel-banner" id="#section-banner">
+    <div class="carousel-banner-container">
+        <ng-container *ngFor="let banner of dataInfo.banners">
+            <div>
+                <figure class="carousel-banner-figure">
+                    <img class="carousel-banner-img" src="{{banner.location}}">
+                </figure>
+                <h1 class="carousel-banner-text" [innerHTML]="banner.text"></h1>
+            </div>
+        </ng-container>
+    </div>
+</section>
+<section class="section-products" id="#section-products">
+    <div class="products-container">
+        <ng-container *ngFor="let product of dataInfo.products">
+            <div class="products-item">
+                <figure class="products-figure">
+                    <img class="products-img" src="{{product.location}}">
+                </figure>
+                <div class="products-item-sub">
+                    <p class="products-text" [innerHTML]="product.description"></p>
+                    <button class="products-details-button {{product.uuid}}">Detalles</button>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</section>
+<section class="section-claims" id="#section-claims">
+    <div class="claims-container">
+        <ng-container *ngFor="let claim of dataInfo.claims">
+            <div class="claims-item">
+                <div class="claims-item-sub">
+                    <h2 class="claims-text" [innerHTML]="claim.title"></h2>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</section>
