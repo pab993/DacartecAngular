@@ -24,7 +24,7 @@ export class MyServiceService {
       }) */
   }
 
-  getInfoDetails(_url_relative: string): Observable<Detail>{
+  getInfoDetails(_url_relative: string){
     return this.http.get<Detail>(this._url_domain + _url_relative);
   }
 

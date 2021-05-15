@@ -20,6 +20,7 @@
                 <div class="products-item-sub">
                     <p class="products-text" [innerHTML]="product.description"></p>
                     <button class="products-details-button {{product.uuid}}">Detalles</button>
+                    <p>{{product.details}}</p>
                 </div>
             </div>
         </ng-container>
@@ -31,6 +32,7 @@
             <div class="claims-item">
                 <div class="claims-item-sub">
                     <h2 class="claims-text" [innerHTML]="claim.title"></h2>
+                    <p>{{claim.text}}</p>
                 </div>
             </div>
         </ng-container>

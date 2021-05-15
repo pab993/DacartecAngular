@@ -63,7 +63,17 @@ export class MyComponentComponent implements OnInit {
         data.banners[i].text = data.banners[i].text?.split("\n").join("<br />");
     }
 
+    /*for(var i in data.products){
+      data.products[i].details = this.myService.getInfoDetails(data.products[i].uuid);
+    }*/
+
+    data.claims.sort((a,b) => { return a.order < b.order ? -1 : 1});
+
     return data;
   }
+
+  /*async requestDataAndWait(uuid: string){
+    return await this.myService.getInfoDetails(uuid);
+  }*/
 
 }
