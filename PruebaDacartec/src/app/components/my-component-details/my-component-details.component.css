@@ -10,7 +10,7 @@
 
 .modal-details-box{
     width: 80%;
-    height: 80%;
+    height: auto;
     background-color: #fff;
     border-radius: 30px;
     position: absolute;
@@ -23,10 +23,64 @@
     padding: 30px;
 }
 
+.modal-details-carousel{
+    margin-top: 40px;
+}
+
 .modal-details-bold{
     font-weight: bold;
 }
 
 .modal-details-img{
     margin: 0 auto;
+}
+
+.modal-details-close{
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+.modal-details-close:after, .modal-details-close:before{
+    position: absolute;
+    content: ' ';
+    right: 50%;
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+}
+
+.modal-details-close:before{
+    transform: rotate(45deg);
+}
+
+.modal-details-close:after{
+    transform: rotate(-45deg);
+}
+
+.modal-details-close:hover {
+    opacity: 1;
+  }
+
+/* ESTILOS MOVIL MODAL DETALLES*/
+
+@media only screen and (max-width: 950px) {
+    .modal-details-img{
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .modal-details-box{
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
 }

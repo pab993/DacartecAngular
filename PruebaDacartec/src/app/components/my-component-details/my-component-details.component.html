@@ -1,6 +1,7 @@
 <ng-container *ngIf="isloaded" name="test" [(ngModel)]="isloaded" ngDefaultControl>
     <div class="modal-details-container" (click)="closeDetailsModal()">
         <div class="modal-details-box" (click)="$event.stopPropagation()">
+            <div class="modal-details-close" (click)="closeDetailsModal()"></div>
             <div class="modal-details-carousel" id="#modal-details-carousel">
                 <div class="modal-details-carousel-container">
                     <ng-container *ngFor="let image of arrayDetails.images">
