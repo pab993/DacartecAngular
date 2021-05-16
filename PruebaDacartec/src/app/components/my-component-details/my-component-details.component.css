@@ -1,0 +1,32 @@
+.modal-details-container{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.modal-details-box{
+    width: 80%;
+    height: 80%;
+    background-color: #fff;
+    border-radius: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-details-carousel, .modal-details-features{
+    padding: 30px;
+}
+
+.modal-details-bold{
+    font-weight: bold;
+}
+
+.modal-details-img{
+    margin: 0 auto;
+}

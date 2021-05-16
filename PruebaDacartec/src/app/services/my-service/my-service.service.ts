@@ -18,10 +18,6 @@ export class MyServiceService {
 
   getInfo(): Observable<Data>{
     return this.http.get<Data>(this._url);
-
-      /** map(response => response.sort((a, b) => {
-        return a.name < b.name ? -1 : 1;
-      }) */
   }
 
   getInfoDetails(_url_relative: string){

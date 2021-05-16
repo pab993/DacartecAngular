@@ -11,19 +11,29 @@
     </div>
 </section>
 <section class="section-products" id="#section-products">
-    <div class="products-container">
-        <ng-container *ngFor="let product of dataInfo.products">
-            <div class="products-item">
-                <figure class="products-figure">
-                    <img class="products-img" src="{{product.location}}">
-                </figure>
-                <div class="products-item-sub">
-                    <p class="products-text" [innerHTML]="product.description"></p>
-                    <button class="products-details-button {{product.uuid}}">Detalles</button>
-                    <p>{{product.details}}</p>
+    <div class="products-container-header">
+        <div class="products-container-head">
+            <label for="filterPost">Búsqueda y filtrado de productos:</label>
+            <input type="text" class="products-container-search" name="filterPost" placeholder="Buscar..." [(ngModel)]="filterPost">
+            <select name="filterCat" id="categories" multiple class="selectpicker" [(ngModel)]="filterCat">
+                <ng-container *ngFor="let cat of categories">
+                    <option value="{{cat}}">{{cat}}</option>
+                </ng-container>
+            </select>
+        </div>
+        <div class="products-container">
+            <ng-container *ngFor="let product of dataInfo.products | filter:filterPost | category:filterCat">
+                <div class="products-item">
+                    <figure class="products-figure">
+                        <img class="products-img" src="{{product.location}}">
+                    </figure>
+                    <div class="products-item-sub">
+                        <p class="products-text" [innerHTML]="product.description"></p>
+                        <button class="products-details-button {{product.uuid}}" (click)="details.detailsCall(product.uuid)">Detalles</button>
+                    </div>
                 </div>
-            </div>
-        </ng-container>
+            </ng-container>
+        </div>
     </div>
 </section>
 <section class="section-claims" id="#section-claims">
@@ -38,3 +48,5 @@
         </ng-container>
     </div>
 </section>
+
+<app-my-component-details #details></app-my-component-details>

@@ -1,0 +1,25 @@
+<ng-container *ngIf="isloaded" name="test" [(ngModel)]="isloaded" ngDefaultControl>
+    <div class="modal-details-container" (click)="closeDetailsModal()">
+        <div class="modal-details-box" (click)="$event.stopPropagation()">
+            <div class="modal-details-carousel" id="#modal-details-carousel">
+                <div class="modal-details-carousel-container">
+                    <ng-container *ngFor="let image of arrayDetails.images">
+                        <div>
+                            <figure class="modal-details-figure">
+                                <img class="modal-details-img" src="{{image}}">
+                            </figure>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="modal-details-features">
+                <ul>
+                    <ng-container *ngFor="let feature of arrayDetails.features">
+                        <li class="modal-details-bold" *ngIf="feature.important">{{feature.text}}</li>
+                        <li *ngIf="!feature.important">{{feature.text}}</li>
+                    </ng-container>
+                </ul>
+            </div>
+        </div>
+    </div>
+</ng-container>

@@ -1,8 +1,8 @@
 import { MyServiceService } from './../../services/my-service/my-service.service';
 import { Data } from './../../models/data.model';
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/models/product.model';
 declare var $: any;
+declare var tail: any;
 
 @Component({
   selector: 'my-component',
@@ -11,7 +11,10 @@ declare var $: any;
 })
 export class MyComponentComponent implements OnInit {
 
-  public dataInfo: any;
+  dataInfo: any;
+  categories: string[] = [];
+  filterPost = '';
+  filterCat: string[] = [];
   arrayDetails: any;
 
   constructor(private myService: MyServiceService) {}
@@ -23,57 +26,36 @@ export class MyComponentComponent implements OnInit {
 
       $(document).ready(function() {
 
-        $('.carousel-banner-container').slick({
-          responsive: [
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-              }
-            }
-          ]
+        tail.select('.selectpicker',{
+          placeholder: 'Filtra por categoría...'
         });
-  
+
+        $('.carousel-banner-container').slick({
+          
+        });
       });
     });
-
-    /*
-      if(data.products != null){
-        for(var i in data.products){
-          this.myService.getInfoDetails(data.products[i].uuid).subscribe(dataDetails => {
-            dataDetails.uuid = data.products[i].uuid;
-            this.arrayDetails.push(dataDetails);
-          });
-        }
-        for(var i in data.products){
-          for(var j in this.arrayDetails){
-            if(data.products[i].uuid == this.arrayDetails[j].uuid){
-              data.products[i].details = this.arrayDetails[j];
-            }
-          }
-        }
-      }
-      this.dataInfo = data;
-    */
   }
 
   prepararDatos(data: Data){
+    //Cambiamos el texto para que dé un salto de línea si así viene del servicio
     for(var i in data.banners){
         data.banners[i].text = data.banners[i].text?.split("\n").join("<br />");
     }
 
-    /*for(var i in data.products){
-      data.products[i].details = this.myService.getInfoDetails(data.products[i].uuid);
-    }*/
+    //Reunimos todas las categorias en un array
+    for(var i in data.products){
+      for(var j in data.products[i].categories){
+        if(!this.categories.includes(data.products[i].categories[j])){
+          this.categories.push(data.products[i].categories[j]);
+        }
+      }
+    }
 
+    //Ordenamos los claims por su campo order
     data.claims.sort((a,b) => { return a.order < b.order ? -1 : 1});
 
     return data;
   }
-
-  /*async requestDataAndWait(uuid: string){
-    return await this.myService.getInfoDetails(uuid);
-  }*/
 
 }

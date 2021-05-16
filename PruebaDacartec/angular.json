@@ -29,11 +29,13 @@
             "styles": [
               "src/styles.css",
               "node_modules/slick-carousel/slick/slick.scss",
-              "node_modules/slick-carousel/slick/slick-theme.scss"
+              "node_modules/slick-carousel/slick/slick-theme.scss",
+              "node_modules/tail.select/css/bootstrap4/tail.select-default.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/slick-carousel/slick/slick.min.js"
+              "node_modules/slick-carousel/slick/slick.min.js",
+              "node_modules/tail.select/js/tail.select-full.min.js"
             ]
           },
           "configurations": {
